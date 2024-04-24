@@ -76,7 +76,7 @@ export async function deleteUser(clerkId: string) {
     const deletedUser = await User.findByIdAndDelete(userToDelete._id);
 
     // Revalidate the cache
-    revalidatePath("/");
+    // revalidatePath("/");
 
     // Return the deleted user
     return deletedUser ? JSON.parse(JSON.stringify(deletedUser)) : null;
