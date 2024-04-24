@@ -94,7 +94,7 @@ export async function POST(req: Request) {
     // form a new user
     const user = {
       firstName: first_name,
-      last_name: last_name,
+      lastName: last_name,
       username: username!,
       photo: image_url,
     };
@@ -111,7 +111,7 @@ export async function POST(req: Request) {
     const { id } = evt.data;
 
     // deletes the user with the custom deleteUser function
-    const deletedUser = await deleteUser(id);
+    const deletedUser = await deleteUser(id!);
 
     // if the user is deleted, update the metadata with a response
     return NextResponse.json({ message: "OK", user: deletedUser });
